@@ -55,8 +55,8 @@
                         <Label text="Sobrenome" GridPane.rowIndex="1" />
                         <Label text="Endereco" GridPane.rowIndex="2" />
                         <Label text="Cidade" GridPane.rowIndex="3" />
-                        <Label text="Cod Postal" GridPane.rowIndex="4" />
-                        <Label text="Data Nasc" GridPane.rowIndex="5" />
+                        <Label text="CodPostal" GridPane.rowIndex="4" />
+                        <Label text="DatNasc" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <HBox layoutX="231.0" layoutY="259.0" spacing="5.0">

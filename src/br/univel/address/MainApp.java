@@ -2,18 +2,55 @@ package br.univel.address;
 
 import java.io.IOException;
 
+import br.univel.address.model.Pessoa;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+
 public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
 
+    // ... APÓS AS OUTRAS VARIÁVEIS ...
+
+    /**
+     * Os dados como uma observable list de Persons.
+     */
+    private ObservableList<Pessoa> pessoaData = FXCollections.observableArrayList();
+
+    /**
+     * Construtor
+     */
+    public MainApp() {
+        // Add some sample data
+        pessoaData.add(new Pessoa("Hans", "Muster"));
+        pessoaData.add(new Pessoa("Ruth", "Mueller"));
+        pessoaData.add(new Pessoa("Heinz", "Kurz"));
+        pessoaData.add(new Pessoa("Cornelia", "Meier"));
+        pessoaData.add(new Pessoa("Werner", "Meyer"));
+        pessoaData.add(new Pessoa("Lydia", "Kunz"));
+        pessoaData.add(new Pessoa("Anna", "Best"));
+        pessoaData.add(new Pessoa("Stefan", "Meier"));
+        pessoaData.add(new Pessoa("Martin", "Mueller"));
+    }
+
+    /**
+     * Retorna os dados como uma observable list de Persons. 
+     * @return
+     */
+    public ObservableList<Pessoa> getPessoaData() {
+        return pessoaData;
+    }
+
+    // ... O RESTANTE DA CLASSE ...
+    
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -23,7 +60,7 @@ public class MainApp extends Application {
 
         showPersonOverview();
     }
-
+    
     /**
      * Inicializa o root layout (layout base).
      */
